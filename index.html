@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+	<title>新地图</title>
+
+        <!--加载检索信息窗口-->
+ <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=bAOBUKm78ZzuqcwY1CNm4OMiMIGkGojR"></script>
+ <!--加载鼠标绘制工具-->
+
+<style>
+body,ul,li,p,input{
+  margin:0px;
+  padding:0px;
+  list-style: none;
+}
+a{
+  
+  text-decoration: none;
+}
+
+	body, html{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font: 12px/180% Arial, Helvetica, sans-serif;
+    list-style-type: none;
+    position: relative;
+
+}
+
+#allmap {
+    width: 100%;
+    height: 100%;
+
+}
+
+/* 选择框的样式 */
+
+
+.flip
+{
+  width:200px;
+  height:20px;
+  padding:5px;
+  text-align:center;
+  background-color:#e5eecc;
+  border:solid 1px #c3c3c3;
+  cursor:pointer;
+  position:absolute;
+  top:20px;
+  right:130px;
+}
+.panel
+{
+  width:260px; height:395px;
+   display:none;  
+  background-color:#e5eecc;
+  border:solid 1px #c3c3c3;
+  position:absolute;
+  top:59px;
+  right:100px;
+}
+h2{margin:0px;padding:0px;font-size:12px;font-weight:bold;}
+button {
+    position: absolute;
+    z-index: 50;
+    top: 7px;
+    right: 6px;
+    width: 12px;
+    height: 12px;
+    background: url(http://webmap2.map.bdstatic.com/wolfman/static/common/images/popup_close_15d2283.gif) no-repeat;
+    border: none;
+    cursor: pointer;
+}
+.title{border-bottom: 1px solid #dadada;height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+    color: #4c4c4c;
+    padding-left: 7px}
+.conter{height:369px;border-top: 1px solid #dadada;}
+ .place{
+    width: 100%; 
+    height: 100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-bottom:1px solid #ccc;
+
+    
+}
+
+ .sty{
+  color:#79a7e0;
+  display: block;
+  float: left;
+  padding:5px;
+  font-weight: 600;
+
+ 
+}
+ .sty:hover{
+  color:#f5897b;
+}
+
+.road{
+  float: left;
+   padding:5px;
+   color:blue;
+}
+.clckClass{color:red;}
+.styse{
+  color:#79a7e0;
+  display: block;
+  float: left;
+ /*  padding:5px; */
+  font-weight: 600;
+}
+.check input{outline:medium;border:none;vertical-align:middle;margin-left: 7px;width:13px;height:13px;}
+.rest{ float: left;
+   padding:5px;
+   color:blue;}
+</style>
+</head>
+<body>
+	   <div id="allmap"></div> 
+               
+           
+<div class="flip">请点击我</div>
+
+<div class="panel">
+  <div class="title">
+  <h2 class="left">请选择区域</h2>
+  <button class="popup_close" title="关闭"></button>
+  </div>
+
+  <div class="conter">
+  <div  class="place">
+    <a href=""><ul class="sty" style=" height:90px;">东丽区:</ul></a>
+   
+    <a href="javascript:void(0)"><li class="road">张贵庄街</li></a>
+    <a href="javascript:void(0)"><li class="road">张贵庄街</li></a>
+    <a href="javascript:void(0)"><li class="road">张贵庄街</li></a>
+    <a href="javascript:void(0)"><li class="road">张贵庄街</li></a>
+    <a href="javascript:void(0)"><li class="road">张贵庄街</li></a>
+    <a href="javascript:void(0)"><li class="road">张贵庄街</li></a>
+    <a href="javascript:void(0)"><li class="road">张贵庄街</li></a>
+    <a href="javascript:void(0)"><li class="road">张贵庄街</li></a>
+    <a href="javascript:void(0)"><li class="road">张贵庄街</li></a>
+    <a href="javascript:void(0)"><li class="road">张贵庄街</li></a>
+    <a href="javascript:void(0)"><li class="road">张贵庄街</li></a>
+    <a href="javascript:void(0)"><li class="road">张贵庄街</li></a>
+
+<a href=""><ul class="sty"style=" height:90px;">河西区:</ul></a>
+   
+    <a href="javascript:void(0)"><li class="road">张贵庄街</li></a>
+    <a href="javascript:void(0)"><li class="road">张贵庄街</li></a>
+    <a href="javascript:void(0)"><li class="road">张贵庄街</li></a>
+    <a href="javascript:void(0)"><li class="road">张贵庄街</li></a>
+    <a href="javascript:void(0)"><li class="road">张贵庄街</li></a>
+    <a href="javascript:void(0)"><li class="road">张贵庄街</li></a>
+    <a href="javascript:void(0)"><li class="road">张贵庄街</li></a>
+    <a href="javascript:void(0)"><li class="road">张贵庄街</li></a>
+    <a href="javascript:void(0)"><li class="road">张贵庄街</li></a>
+    <a href="javascript:void(0)"><li class="road">张贵庄街</li></a>
+    <a href="javascript:void(0)"><li class="road">张贵庄街</li></a>
+    <a href="javascript:void(0)"><li class="road">张贵庄街</li></a>
+
+  </div>
+  <div  class="check">
+  <a href=""><ul class="styse"style=" height:50px;">化学品工业风险:</ul></a>
+                <input type="checkbox" style="margin-left:4px;" name="ck00" onclick="addPreItem()" value="危化品生产企业"/>危化品生产企业
+                <input type="checkbox" name="ck00" onclick="addPreItem()" value="加油站"/>加油站
+                <input type="checkbox" name="ck00" onclick="addPreItem()" value="涉氨企业"/>涉氨企业
+                <input type="checkbox" name="ck00" onclick="addPreItem()" value="涉氯企业"/>涉氯企业
+                <input type="checkbox" name="ck00" onclick="addPreItem()" value="危化品存储经营企业"/>危化品存储经营企业
+                <input type="checkbox" name="ck00" onclick="addPreItem()" value="危化品使用企业"/>危化品使用企业
+                <input type="checkbox" name="ck00" onclick="addPreItem()" value="港口涉危企业"/>港口涉危企业
+              
+                <input type="checkbox" name="ck00" onclick="addPreItem()" value="烟花爆竹仓库"/>烟花爆竹仓库
+               
+                <input type="checkbox" name="ck00" onclick="addPreItem()" value="非煤矿山油库"/>非煤矿山油库
+                <input type="checkbox" name="ck00" onclick="addPreItem()" value="燃气站场"/>燃气站场
+               
+  </div>
+  <br>
+  <div class="transit">
+      <a href=""><ul class="styse"style=" padding:4px;">危险品运输风险:</ul></a>
+      <a href="javascript:void(0)"><li class="rest">原油管道</li></a>
+      <a href="javascript:void(0)"><li class="rest">危化管道</li></a>
+      <a href="javascript:void(0)"><li class="rest">天然气管道</li></a>
+      <a href="javascript:void(0)"><li class="rest">危化品货运运输</li></a>
+  </div>
+
+</div>         
+</body>
+ <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+</script>
+<script type="text/javascript"
+    src="http://api.map.baidu.com/library/RichMarker/1.2/src/RichMarker_min.js"></script>
+<script type="text/javascript">
+
+// 点击下拉框的js代码
+$(function(){
+  $(".flip").click(function(){
+    $(".panel").slideToggle("slow");
+  });
+
+$(".road").click(function(){
+
+   $("li").removeClass('clckClass');
+    $(this).addClass('clckClass');
+ 
+})
+$(".popup_close").click(function(){
+  $(".panel").slideUp("slow");
+})
+
+});
+
+
+
+
+
+
+
+
+
+// 百度地图API功能
+var map = new BMap.Map('allmap');
+/*var poi = new BMap.Point(117.322622,39.0927);*/
+map.centerAndZoom("天津", 10);
+
+map.addControl(new BMap.MapTypeControl());
+//添加地图类型控件
+map.enableKeyboard();
+/* 键盘方向的移动*/
+map.enableInertialDragging()
+/*惯性拖拽*/
+map.enablePinchToZoom()
+/*双指缩放功能*/
+map.enableAutoResize()
+/*自动适应容器尺寸变化*/
+map.disableDoubleClickZoom()//禁用双击放大。
+
+map.addEventListener("click", function(e) {
+    console.log(e.point.lng + ", " + e.point.lat);
+});
+map.enableScrollWheelZoom();
+var overlays = [];
+var overlaycomplete = function(e) {
+    overlays.push(e.overlay);
+}
+;
+var styleOptions = {
+    strokeColor: "red",
+    //边线颜色。
+    fillColor: "red",
+    //填充颜色。当参数为空时，圆形将没有填充效果。
+    strokeWeight: 3,
+    //边线的宽度，以像素为单位。
+    strokeOpacity: 0.8,
+    //边线透明度，取值范围0 - 1。
+    fillOpacity: 0.7,
+    //填充的透明度，取值范围0 - 1。
+    strokeStyle: 'solid'//边线的样式，solid或dashed。
+}
+
+
+    var a=[108.95148,109.072213,108.75026,108.766357];
+    var b=[34.304268,34.281363,34.370084,34.248903];
+     
+    var c=[117.154459, 117.162939,117.092656,117.116802];
+    var d=[39.236373,39.246097,39.209876,39.195562];
+    
+    var g=[117.00225, 117.025391,117.011018,117.035164];
+    var f=[39.142639,39.126071,39.125092,39.11647];
+    
+                     
+    
+    var myIcon1 = new BMap.Icon("http://api.map.baidu.com/library/RichMarker/1.2/examples/images/back1.png", new BMap.Size(32,70), {
+        imageOffset : new BMap.Size(0, 0)
+    });
+   
+   
+ 
+    map.addEventListener("zoomend",function(){ 
+        console.log(this.getZoom());
+        if(this.getZoom()<= 10)
+            {
+            map.clearOverlays();
+            for(var i=0;i<1;i++){
+                var html4 = '<div style="position: absolute; margin: 0px; padding: 0pt; width: 70px; height: 60px; left: -10px; top: -35px; background-color:#EE5D5D;border-radius:100px;padding-top:10px;">'
+                   /* + '<img id="rm3_image" style="border:none;left:0px; top:0px; position:absolute;" src="http://api.map.baidu.com/library/RichMarker/1.2/examples/images/back1.png">'*/
+                    + '</div>'
+                    + '<label  class=" BMapLabel" unselectable="on" style="position: absolute; float:left; display: inline; cursor: inherit; border: 0px none; padding: 10px 0px 0px; white-space: nowrap; font: 12px arial,simsun; z-index: 80; color:white; left: 8px; top: -35px;">北辰区<br></label>'
+                    +'<br>'
+                    + '<label class=" BMapLabel" unselectable="on" style="position: absolute; float:left; display: inline; cursor: inherit; border: 0px none; padding: 2px 1px 1px; white-space: nowrap; font: 12px arial,simsun; z-index: 80; color:white; left: 8px; top: -10px;">356个<br>危险源</label>';
+              
+              
+              
+               var html3 = '<div style="position: absolute; margin: 0px; padding: 0pt; width: 70px; height: 60px; left: -10px; top: -35px; background-color:#EE5D5D;border-radius:100px;padding-top:10px;">'
+                  
+                    + '</div>'
+                    + '<label  class=" BMapLabel" unselectable="on" style="position: absolute; float:left; display: inline; cursor: inherit; border: 0px none; padding: 10px 0px 0px; white-space: nowrap; font: 12px arial,simsun; z-index: 80; color:white; left: 8px; top: -35px;">西青区<br></label>'
+                    + '<label class=" BMapLabel" unselectable="on" style="position: absolute; float:left; display: inline; cursor: inherit; border: 0px none; padding: 2px 1px 1px; white-space: nowrap; font: 12px arial,simsun; z-index: 80; color:white; left: 8px; top: -10px;">296个<br>危险源</label>';
+         
+                    myRichMarker2 = new BMapLib.RichMarker(
+                    html4, new BMap.Point(117.148422,39.232125), {
+                        "enableDragging" : false
+                    });
+                    myRichMarker2.addEventListener("onclick",attribute1);
+                map.addOverlay(myRichMarker2);
+            
+        
+            /*这是添加分区的代码*/
+            myRichMarker11 = new BMapLib.RichMarker(
+                    html3, new BMap.Point(117.003544,39.151593), {
+                        "enableDragging" : false
+                    });
+                    myRichMarker11.addEventListener("onclick",attribute2);
+                map.addOverlay(myRichMarker11);
+            }
+             
+        }
+           
+      
+            
+            
+        if(this.getZoom()==12){
+            map.clearOverlays();
+            for(var i=0;i<4;i++){
+                var html4 = '<div style="position: absolute; margin: 0pt; padding: 0pt; width: 80px; height: 26px; left: -10px; top: -35px; overflow: hidden;">'
+                    + '<img id="rm3_image" style="border:none;left:0px; top:0px; position:absolute;" src="http://api.map.baidu.com/library/RichMarker/1.2/examples/images/back1.png">'
+                    + '</div>'
+                    + '<label  class=" BMapLabel" unselectable="on" style="position: absolute; float:left; display: inline; cursor: inherit; border: 0px none; padding: 2px 1px 1px; white-space: nowrap; font: 12px arial,simsun; z-index: 80; color: rgb(255, 102, 0); left: 15px; top: -35px;">上海：</label>'
+                    + '<label class=" BMapLabel" unselectable="on" style="position: absolute; float:left; display: inline; cursor: inherit; border: 0px none; padding: 2px 1px 1px; white-space: nowrap; font: 12px arial,simsun; z-index: 80; color: rgb(255, 102, 0); left: 45px; top: -35px;">12</label>';
+                    myRichMarker2 = new BMapLib.RichMarker(
+                    html4, new BMap.Point(c[i], d[i]), {
+                        "enableDragging" : false
+                    });
+                map.addOverlay(myRichMarker2);
+                myRichMarker2.addEventListener("onclick",attribute1);
+                 
+                   
+                 
+                 
+                 
+                 
+            }
+        }
+//      addEvent(window,"loade",function(){})
+             /*  街区的细化*/
+        if(this.getZoom()==12){
+            map.clearOverlays();
+            for(var i=0;i<4;i++){
+                 
+                 var html3 = '<div style="position: absolute; margin: 0pt; padding: 0pt; width: 80px; height: 26px; left: -10px; top: -35px; overflow: hidden;">'
+                    + '<img id="rm3_image" style="border:none;left:0px; top:0px; position:absolute;" src="http://api.map.baidu.com/library/RichMarker/1.2/examples/images/back1.png">'
+                    + '</div>'
+                    + '<label  class=" BMapLabel" unselectable="on" style="position: absolute; float:left; display: inline; cursor: inherit; border: 0px none; padding: 2px 1px 1px; white-space: nowrap; font: 12px arial,simsun; z-index: 80; color: rgb(255, 102, 0); left: 15px; top: -35px;">天津：</label>'
+                    + '<label class=" BMapLabel" unselectable="on" style="position: absolute; float:left; display: inline; cursor: inherit; border: 0px none; padding: 2px 1px 1px; white-space: nowrap; font: 12px arial,simsun; z-index: 80; color: rgb(255, 102, 0); left: 45px; top: -35px;">11</label>';
+                    myRichMarker11 = new BMapLib.RichMarker(
+                    html3, new BMap.Point(g[i], f[i]), {
+                        "enableDragging" : false
+                    });
+                map.addOverlay(myRichMarker11);
+                myRichMarker11.addEventListener("onclick",attribute2);
+        
+             }
+        }
+        
+        
+        
+        
+        
+        
+        if (this.getZoom() >= 14){
+            map.clearOverlays();
+            for (var i = 0; i < 5; i++) {
+                var marker = new BMap.Marker(new BMap.Point(
+                        c[i], d[i]), {
+                    icon : myIcon1
+                });
+                map.addOverlay(marker);
+            }
+        }
+        
+        
+        
+ 
+        function attribute1(e) {
+            console.log(e.target._position)
+            //根据坐标设置中心;
+            map.setCenter(new BMap.Point(
+                    e.target._position.lng,
+                    e.target._position.lat));
+            map.setZoom(12);
+        }
+ 
+        function attribute2(e) {
+            console.log(e.target)
+            map.setCenter(new BMap.Point(
+                    e.target._position.lng,
+                    e.target._position.lat));
+            map.setZoom(14);
+        }
+    });
+
+
+
+
+
+/* $.ajax({
+    
+    url:"data/point_list.json",
+    type:'GET',
+     success:function(data){
+     console.log(data)
+     }
+    
+})
+ */
+
+
+
+
+
+
+
+//实例化鼠标绘制工具
+/*var drawingManager = new BMapLib.DrawingManager(map,{
+    isOpen: false,
+    //是否开启绘制模式
+    enableDrawingTool: false,
+    //是否显示工具栏
+    drawingToolOptions: {
+        anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
+        //位置
+        offset: new BMap.Size(5,5),
+        //偏离值
+        scale: 0.8,
+        //工具栏缩放比例  BMAP_DRAWING_MARKER 画点  BMAP_DRAWING_CIRCLE   thread
+
+        drawingModes: [
+        BMAP_DRAWING_CIRCLE, 
+        BMAP_DRAWING_MARKER,
+        BMAP_DRAWING_POLYLINE,
+        BMAP_DRAWING_POLYGON 
+        ]
+    },
+    circleOptions: styleOptions,
+    //圆的样式
+    polylineOptions: styleOptions,
+    //线的样式
+    polygonOptions: styleOptions, //多边形的样式
+    rectangleOptions: styleOptions//矩形的样式
+});
+//添加鼠标绘制工具监听事件，用于获取绘制结果
+drawingManager.addEventListener('overlaycomplete', overlaycomplete);
+function clearAll() {
+    for (var i = 0; i < overlays.length; i++) {
+        map.removeOverlay(overlays[i]);
+    }
+    overlays.length = 0
+}*/
+
+
+
+</script>
+</html>
